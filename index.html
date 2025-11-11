@@ -6,7 +6,6 @@
   <title>Mariage Patricia & Rudy</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
   <style>
-    /* === RESET & TYPO === */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Playfair Display', serif; background: #fdfaf7; color: #5d4037; line-height: 1.7; }
     h1, h2, h3 { font-family: 'Dancing Script', cursive; color: #8b5a2b; }
@@ -14,43 +13,46 @@
     a { color: #8b5a2b; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* === HERO SECTION === */
+    /* HERO */
     .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
+      position: relative; height: 100vh; overflow: hidden; background: #000;
     }
-    .hero h1 { font-size: 4.5em; margin-bottom: 10px; }
-    .hero p { font-size: 1.4em; margin: 8px 0; }
+    .hero img {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;
+    }
+    .hero-content {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; z-index: 1;
+    }
+    .play-btn {
+      background: rgba(139, 90, 43, 0.9); border: none; border-radius: 50%; width: 80px; height: 80px; font-size: 2em; color: white; cursor: pointer; margin-bottom: 20px;
+    }
+    .play-btn:hover { background: #8b5a2b; }
 
-    /* === SECTIONS === */
+    /* POPUP */
+    #videoPopup {
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; 
+      justify-content: center; align-items: center; flex-direction: column;
+    }
+    #videoPopup video {
+      width: 90%; max-width: 800px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .close-btn {
+      position: absolute; top: 20px; right: 20px; background: none; border: none; color: white; font-size: 2.5em; cursor: pointer;
+    }
+
+    /* SECTIONS */
     section { padding: 80px 20px; max-width: 900px; margin: 0 auto; text-align: center; }
     h2 { font-size: 3em; margin-bottom: 30px; }
-    ul { list-style: none; font-size: 1.2em; }
+    .programme-item { margin: 30px 0; font-size: 1.3em; }
+    .programme-item strong { color: #8b5a2b; }
+    .dresscode { background: #f9e4d4; padding: 40px; border-radius: 15px; margin: 40px 0; }
+    .contact { margin: 25px 0; font-size: 1.1em; }
+    .contact strong { color: #8b5a2b; }
+    footer { text-align: center; padding: 40px; font-size: 0.9em; color: #999; }
 
-    /* === COUNTDOWN === */
     #countdown { font-size: 2em; font-weight: bold; margin: 40px 0; color: #8b5a2b; }
     .time-unit { display: inline-block; margin: 0 15px; }
 
-    /* === PROGRAMME === */
-    .programme-item { margin: 30px 0; font-size: 1.3em; }
-    .programme-item strong { color: #8b5a2b; }
-
-    /* === DRESS CODE === */
-    .dresscode { background: #f9e4d4; padding: 40px; border-radius: 15px; margin: 40px 0; }
-
-    /* === CONTACTS === */
-    .contact { margin: 25px 0; font-size: 1.1em; }
-    .contact strong { color: #8b5a2b; }
-
-    /* === FOOTER === */
-    footer { text-align: center; padding: 40px; font-size: 0.9em; color: #999; }
-
-    /* === RESPONSIVE === */
     @media (max-width: 768px) {
       .hero h1 { font-size: 3em; }
       h2 { font-size: 2.2em; }
@@ -59,86 +61,70 @@
   </style>
 </head>
 <body>
-  
-<!-- ==================== HERO AVEC VIDÉO POPUP (FIX FINAL) ==================== -->
-<section class="hero" style="position: relative; height: 100vh; background: #000;">
-  <!-- IMAGE DE FOND (votre vidéo comme poster) -->
-  <img src="https://res.cloudinary.com/datfh3y64/image/upload/w_1920,q_auto,f_auto/v1762864262/InShot_20251006_134808574_osccot.jpg" 
-       alt="Patricia & Rudy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
-  
-  <!-- BOUTON POUR JOUER LA VIDÉO EN PLEIN ÉCRAN -->
-  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
-    <button onclick="playVideo()" style="background: rgba(139, 90, 43, 0.8); border: none; border-radius: 50%; width: 80px; height: 80px; font-size: 2em; color: white; cursor: pointer; margin-bottom: 20px;">
-      ▶
-    </button>
-    <h1 style="font-size: 4em; text-shadow: 2px 2px 12px rgba(0,0,0,0.9); font-family: 'Dancing Script', cursive; margin: 0;">PATRICIA & RUDY</h1>
-    <p style="font-size: 1.4em; text-shadow: 1px 1px 8px rgba(0,0,0,0.8);">L’évènement à NE PAS MANQUER</p>
-    <p style="font-size: 1.2em; text-shadow: 1px 1px 6px rgba(0,0,0,0.8);">LE MARIAGE, SAISON FINALE</p>
+
+  <!-- HERO -->
+  <section class="hero">
+    <!-- IMAGE DE FOND (FIXÉE) -->
+    <img src="https://res.cloudinary.com/datfh3y64/image/upload/w_1920,q_auto:eco,f_auto/v1762864262/InShot_20251006_134808574_osccot.jpg" 
+         alt="Patricia & Rudy" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1350&q=80'">
+
+    <div class="hero-content">
+      <button class="play-btn" onclick="playVideo()">▶</button>
+      <h1 style="font-size: 4em; text-shadow: 2px 2px 12px rgba(0,0,0,0.9); margin: 0;">PATRICIA & RUDY</h1>
+      <p style="font-size: 1.4em; text-shadow: 1px 1px 8px rgba(0,0,0,0.8);">L’évènement à NE PAS MANQUER</p>
+      <p style="font-size: 1.2em; text-shadow: 1px 1px 6px rgba(0,0,0,0.8);">LE MARIAGE, SAISON FINALE</p>
+    </div>
+  </section>
+
+  <!-- POPUP VIDÉO -->
+  <div id="videoPopup">
+    <button class="close-btn" onclick="closeVideo()">×</button>
+    <video controls>
+      <source src="https://res.cloudinary.com/datfh3y64/video/upload/v1762864262/InShot_20251006_134808574_osccot.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la vidéo.
+    </video>
   </div>
-</section>
 
-<!-- POPUP VIDÉO (MASQUÉE PAR DÉFAUT) -->
-<div id="videoPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center;">
-  <button onclick="closeVideo()" style="position: absolute; top: 20px; right: 20px; background: none; border: none; color: white; font-size: 2em; cursor: pointer;">&times;</button>
-  <video controls width="80%" height="80%" style="border-radius: 10px;">
-    <!-- VOTRE VIDÉO EN PLEIN ÉCRAN -->
-    <source src="https://res.cloudinary.com/datfh3y64/video/upload/v1762864262/InShot_20251006_134808574_osccot.mp4" type="video/mp4">
-    Votre navigateur ne supporte pas la vidéo.
-  </video>
-</div>
+  <!-- SCRIPT POPUP -->
+  <script>
+    function playVideo() {
+      const popup = document.getElementById('videoPopup');
+      popup.style.display = 'flex';
+      setTimeout(() => {
+        popup.querySelector('video').play();
+      }, 100);
+    }
+    function closeVideo() {
+      const popup = document.getElementById('videoPopup');
+      const video = popup.querySelector('video');
+      video.pause();
+      video.currentTime = 0;
+      popup.style.display = 'none';
+    }
+  </script>
 
-<!-- SCRIPT POUR LA POPUP -->
-<script>
-  function playVideo() {
-    document.getElementById('videoPopup').style.display = 'flex';
-    document.querySelector('#videoPopup video').play();
-  }
-  
-  function closeVideo() {
-    document.getElementById('videoPopup').style.display = 'none';
-    document.querySelector('#videoPopup video').pause();
-  }
-</script>
-  
-  <!-- ==================== INTRODUCTION ==================== -->
+  <!-- INTRODUCTION -->
   <section>
     <h2>Le mariage de Patricia & Rudy</h2>
-    <p>
-      <!-- PERSONNALISEZ ICI : Votre texte d’intro -->
-      Plongez dans une histoire d’amour inoubliable. Un casting d’exception, un décor de rêve et un scénario rempli d’émotions…
-    </p>
-    <p style="margin-top: 20px; font-size: 1.3em;">
-      <!-- PERSONNALISEZ ICI : Date + lieu -->
-      Le <strong>10 janvier 2026</strong>, rejoignez-nous à <strong>Yaoundé</strong> pour célébrer notre grand jour !
-    </p>
+    <p>Plongez dans une histoire d’amour inoubliable. Un casting d’exception, un décor de rêve et un scénario rempli d’émotions…</p>
+    <p style="margin-top: 20px; font-size: 1.3em;">Le <strong>10 janvier 2026</strong>, rejoignez-nous à <strong>Yaoundé</strong> pour célébrer notre grand jour !</p>
   </section>
 
-  <!-- ==================== TITRE FUN ==================== -->
+  <!-- TITRE FUN -->
   <section style="background: #8b5a2b; color: white; padding: 60px 20px;">
-    <h2 style="color: white;">
-      <!-- PERSONNALISEZ ICI : Votre nom de mariage fun -->
-      PATRICIA & RUDY LOVE
-    </h2>
+    <h2 style="color: white;">PATRICIA & RUDY LOVE</h2>
   </section>
 
-  <!-- ==================== INVITATION ==================== -->
+  <!-- INVITATION -->
   <section>
     <h2>Notre invitation, rien que pour vous !</h2>
-    <p>
-      <!-- PERSONNALISEZ ICI : Lien vers le PDF ou page d'invitation -->
-      <a href="https://rudynleme-cpu.github.io/mariage-invitations/" target="_blank" style="font-weight: bold; font-size: 1.2em;">
-        Téléchargez votre invitation personnalisée
-      </a>
-    </p>
+    <p><a href="https://rudynleme-cpu.github.io/mariage-invitations/" target="_blank" style="font-weight: bold; font-size: 1.2em;">Téléchargez votre invitation personnalisée</a></p>
   </section>
 
-  <!-- ==================== COUNTDOWN ==================== -->
+  <!-- COUNTDOWN -->
   <section>
     <h2>Le grand jour approche</h2>
-    <p>
-      <!-- PERSONNALISEZ ICI : Date du mariage (format AAAA,MM,JJ) -->
-      Le <strong>10 janvier 2026</strong>, nous nous dirons ‘Oui’ entourés de nos proches.
-    </p>
+    <p>Le <strong>10 janvier 2026</strong>, nous nous dirons ‘Oui’ entourés de nos proches.</p>
     <div id="countdown">
       <span class="time-unit" id="days">00</span> Jours
       <span class="time-unit" id="hours">00</span> Heures
@@ -147,104 +133,70 @@
     </div>
   </section>
 
-  <!-- ==================== PROGRAMME ==================== -->
+  <!-- PROGRAMME -->
   <section id="programme">
     <h2>Programme du grand jour</h2>
     <p>Du premier regard jusqu’à la dernière danse, chaque instant est pensé pour être inoubliable.</p>
-
-    <div class="programme-item">
-      <!-- PERSONNALISEZ ICI : Heure + événement -->
-      <strong>10h00</strong> : Cérémonie religieuse
-    </div>
-    <div class="programme-item">
-      <strong>13h00</strong> : Vin d’honneur
-    </div>
-    <div class="programme-item">
-      <strong>15h00</strong> : Réception & buffet
-    </div>
-
+    <div class="programme-item"><strong>10h00</strong> : Cérémonie religieuse</div>
+    <div class="programme-item"><strong>13h00</strong> : Vin d’honneur</div>
+    <div class="programme-item"><strong>15h00</strong> : Réception & buffet</div>
     <div class="dresscode">
       <p><strong>Dress code :</strong></p>
-      <!-- PERSONNALISEZ ICI : Votre dress code -->
-      <p><strong>‘Color & White’</strong> – Osez les couleurs vibrantes et audacieuses pour la cérémonie</p>
+      <p><strong>‘Color & White’</strong> – Osez les couleurs vibrantes pour la cérémonie</p>
       <p><strong>‘Bon Chic Bon Genre’</strong> – Élégance pour la soirée</p>
-      <p style="margin-top: 15px; font-style: italic;">
-        Merci de ne pas ajouter d’invités et de prévoir une garde pour vos enfants.
-      </p>
+      <p style="margin-top: 15px; font-style: italic;">Merci de ne pas ajouter d’invités et de prévoir une garde pour vos enfants.</p>
     </div>
   </section>
 
-  <!-- ==================== LIEU ==================== -->
+  <!-- LIEU -->
   <section>
     <h2>Un lieu d’exception à Yaoundé</h2>
-    <p>
-      <!-- PERSONNALISEZ ICI : Description du lieu -->
-      Nous avons choisi un cadre chaleureux et prestigieux pour accueillir cette journée pleine de joie.
-    </p>
-    <p style="margin: 20px 0;">
-      <!-- PERSONNALISEZ ICI : Adresse complète -->
-      <strong>Palais des Congrès, Avenue Kennedy, Yaoundé</strong>
-    </p>
-    <!-- PERSONNALISEZ ICI : Lien Google Maps -->
-    <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_LINK_HERE" width="100%" height="400" style="border:0; border-radius:15px;" allowfullscreen="" loading="lazy"></iframe>
+    <p>Nous avons choisi un cadre chaleureux et prestigieux pour accueillir cette journée pleine de joie.</p>
+    <p style="margin: 20px 0;"><strong>Palais des Congrès, Avenue Kennedy, Yaoundé</strong></p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.567890123456!2d11.501234!3d3.866667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwNTEnNjAuMCJOIDExwrAzMCcwNDEuMCJF!5e0!3m2!1sfr!2sde!4v1234567890" width="100%" height="400" style="border:0; border-radius:15px;" allowfullscreen="" loading="lazy"></iframe>
   </section>
 
-  <!-- ==================== HÉBERGEMENT ==================== -->
+  <!-- HÉBERGEMENT -->
   <section>
     <h2>Hôtels à proximité</h2>
     <p>Voici quelques suggestions pour votre séjour :</p>
     <ul style="text-align: left; max-width: 600px; margin: 30px auto;">
-      <!-- PERSONNALISEZ ICI : Ajoutez/supprimez des hôtels -->
       <li><strong>Hilton Yaoundé</strong> – 5 min en voiture</li>
       <li><strong>Hotel Mont Fébé</strong> – 10 min</li>
       <li><strong>La Falaise Hotel</strong> – 15 min</li>
     </ul>
   </section>
 
-  <!-- ==================== CONTACTS ==================== -->
+  <!-- CONTACTS -->
   <section>
     <h2>Vos contacts pour le mariage</h2>
     <p>Pour toute question, contactez :</p>
-    <div class="contact">
-      <!-- PERSONNALISEZ ICI : Nom + rôle + téléphone -->
-      <p><strong>Votre Wedding Planner</strong><br>06 XX XX XX XX</p>
-    </div>
-    <div class="contact">
-      <p><strong>Témoin</strong><br>07 XX XX XX XX</p>
-    </div>
+    <div class="contact"><p><strong>Votre Wedding Planner</strong><br>06 XX XX XX XX</p></div>
+    <div class="contact"><p><strong>Témoin</strong><br>07 XX XX XX XX</p></div>
   </section>
 
-  <!-- ==================== FOOTER ==================== -->
+  <!-- FOOTER -->
   <footer>
     <p>Patricia & Rudy – 10 janvier 2026</p>
-    <p>webdesign : <a href="mailto:votre@email.com">votre@email.com</a></p>
+    <p>webdesign : <a href="mailto:rudynleme@gmail.com">rudynleme@gmail.com</a></p>
   </footer>
 
-  <!-- ==================== COUNTDOWN SCRIPT ==================== -->
+  <!-- COUNTDOWN SCRIPT -->
   <script>
-    // PERSONNALISEZ ICI : Date du mariage (AAAA, MM-1, JJ)
-    const weddingDate = new Date(2026, 0, 10); // 10 janvier 2026
-
+    const weddingDate = new Date(2026, 0, 10);
     function updateCountdown() {
       const now = new Date();
       const diff = weddingDate - now;
-
-      if (diff <= 0) {
-        document.getElementById('countdown').innerHTML = "C'EST AUJOURD'HUI !";
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
+      if (diff <= 0) { document.getElementById('countdown').innerHTML = "C'EST AUJOURD'HUI !"; return; }
+      const days = Math.floor(diff / 86400000);
+      const hours = Math.floor((diff % 86400000) / 3600000);
+      const minutes = Math.floor((diff % 3600000) / 60000);
+      const seconds = Math.floor((diff % 60000) / 1000);
       document.getElementById('days').textContent = days.toString().padStart(2, '0');
       document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
       document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
       document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
     }
-
     setInterval(updateCountdown, 1000);
     updateCountdown();
   </script>
