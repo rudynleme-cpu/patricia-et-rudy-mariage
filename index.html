@@ -59,13 +59,23 @@
   </style>
 </head>
 <body>
-
- <!-- ==================== HERO AVEC VOTRE VIDÉO ==================== -->
+  
+<!-- ==================== HERO AVEC VIDÉO (FIXÉ) ==================== -->
 <section class="hero" style="position: relative; overflow: hidden; height: 100vh;">
-  <video autoplay muted loop playsinline preload="auto" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
-    <!-- LIEN DIRECT DE VOTRE VIDÉO -->
-    <source src="https://res.cloudinary.com/datfh3y64/video/upload/InShot_20251006_134808574_osccot.mp4" type="video/mp4">
-    Votre navigateur ne supporte pas la vidéo.
+  <video 
+    autoplay 
+    muted 
+    loop 
+    playsinline 
+    preload="auto" 
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;"
+    poster="https://res.cloudinary.com/datfh3y64/image/upload/v1/InShot_20251006_134808574_osccot.jpg">
+    
+    <!-- LIEN DIRECT + FIX CLOUDINARY -->
+    <source src="https://res.cloudinary.com/datfh3y64/video/upload/f_auto,fl_attachment/InShot_20251006_134808574_osccot.mp4" type="video/mp4">
+    
+    <!-- Fallback si vidéo échoue -->
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552" alt="Mariage" style="width:100%; height:100%; object-fit:cover;">
   </video>
 
   <div style="position: relative; z-index: 1; padding: 20px; text-align: center; color: white;">
@@ -74,6 +84,7 @@
     <p style="font-size: 1.2em; text-shadow: 1px 1px 6px rgba(0,0,0,0.7);">LE MARIAGE, SAISON FINALE</p>
   </div>
 </section>
+  
   <!-- ==================== INTRODUCTION ==================== -->
   <section>
     <h2>Le mariage de Patricia & Rudy</h2>
