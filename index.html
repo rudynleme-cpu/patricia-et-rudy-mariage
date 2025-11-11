@@ -13,9 +13,11 @@
     a { color: #8b5a2b; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* HERO – EXACTEMENT COMME KIESELOVE.COM */
+    /* HERO – FOND NOIR UNIQUEMENT ICI */
     .hero {
-      position: relative; width: 100%; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;
+      position: relative; width: 100%; height: 100vh; overflow: hidden; 
+      display: flex; align-items: center; justify-content: center; text-align: center; 
+      color: #fff; background: #000 !important;
     }
     .hero__content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
     .hero__title { font-family: 'Dancing Script', cursive; font-size: 5rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); line-height: 1.2; }
@@ -45,32 +47,28 @@
 </head>
 <body>
 
-  <!-- ==================== HERO – COMME KIESELOVE.COM ==================== -->
+  <!-- ==================== HERO – FOND NOIR + VIDÉO ==================== -->
   <section class="hero">
     <div class="hero__content">
-      <!-- CHANGEZ ICI : Vos prénoms -->
       <h1 class="hero__title">PATRICIA & RUDY</h1>
       <p class="hero__subtitle">L'événement à NE PAS MANQUER</p>
       <p class="hero__subtitle">PATRICIA & RUDY : LE MARIAGE, SAISON FINALE</p>
     </div>
-    <!-- VOTRE VIDÉO VIMEO EN FOND (CHANGEZ 1135758370 SI BESOIN) -->
+    <!-- VOTRE VIDÉO VIMEO EN FOND -->
     <iframe class="hero__video" src="https://player.vimeo.com/video/1135758370?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
   </section>
 
   <!-- ==================== INTRODUCTION ==================== -->
   <section>
-    <!-- CHANGEZ ICI : Texte d'intro -->
     <h2>Le mariage de Patricia & Rudy</h2>
     <p>Plongez dans une histoire d'amour inoubliable. Un casting d'exception, un décor de rêve et un scénario rempli d'émotions…</p>
     <p style="margin-top: 20px; font-size: 1.3em;">
-      <!-- CHANGEZ ICI : Date + lieu -->
       Le <strong>10 janvier 2026</strong>, rejoignez-nous à <strong>Yaoundé</strong> pour célébrer notre grand jour !
     </p>
   </section>
 
   <!-- ==================== TITRE FUN ==================== -->
   <section style="background: #8b5a2b; color: white; padding: 60px 20px;">
-    <!-- CHANGEZ ICI : Nom fun -->
     <h2 style="color: white;">PATRICIA & RUDY LOVE</h2>
   </section>
 
@@ -78,7 +76,6 @@
   <section>
     <h2>Notre invitation, rien que pour vous !</h2>
     <p>
-      <!-- CHANGEZ ICI : Lien invitation -->
       <a href="https://rudynleme-cpu.github.io/mariage-invitations/" target="_blank" style="font-weight: bold; font-size: 1.2em;">
         Téléchargez votre invitation personnalisée
       </a>
@@ -89,7 +86,6 @@
   <section>
     <h2>Le grand jour approche</h2>
     <p>
-      <!-- CHANGEZ ICI : Date -->
       Le <strong>10 janvier 2026</strong>, nous nous dirons 'Oui' entourés de nos proches.
     </p>
     <div id="countdown">
@@ -104,19 +100,11 @@
   <section id="programme">
     <h2>Programme du grand jour</h2>
     <p>Du premier regard jusqu'à la dernière danse, chaque instant est pensé pour être inoubliable.</p>
-    <div class="programme-item">
-      <!-- CHANGEZ ICI : Heures et événements -->
-      <strong>10h00</strong> : Cérémonie religieuse
-    </div>
-    <div class="programme-item">
-      <strong>13h00</strong> : Vin d'honneur
-    </div>
-    <div class="programme-item">
-      <strong>15h00</strong> : Réception & buffet
-    </div>
+    <div class="programme-item"><strong>10h00</strong> : Cérémonie religieuse</div>
+    <div class="programme-item"><strong>13h00</strong> : Vin d'honneur</div>
+    <div class="programme-item"><strong>15h00</strong> : Réception & buffet</div>
     <div class="dresscode">
       <p><strong>Dress code :</strong></p>
-      <!-- CHANGEZ ICI : Dress code -->
       <p><strong>'Color & White'</strong> – Osez les couleurs vibrantes pour la cérémonie</p>
       <p><strong>'Bon Chic Bon Genre'</strong> – Élégance pour la soirée</p>
       <p style="margin-top: 15px; font-style: italic;">Merci de ne pas ajouter d'invités et de prévoir une garde pour vos enfants.</p>
@@ -126,15 +114,8 @@
   <!-- ==================== LIEU ==================== -->
   <section>
     <h2>Un lieu d'exception à Yaoundé</h2>
-    <p>
-      <!-- CHANGEZ ICI : Description lieu -->
-      Nous avons choisi un cadre chaleureux et prestigieux pour accueillir cette journée pleine de joie.
-    </p>
-    <p style="margin: 20px 0;">
-      <!-- CHANGEZ ICI : Adresse -->
-      <strong>Palais des Congrès, Avenue Kennedy, Yaoundé</strong>
-    </p>
-    <!-- CHANGEZ ICI : Lien Google Maps embed -->
+    <p>Nous avons choisi un cadre chaleureux et prestigieux pour accueillir cette journée pleine de joie.</p>
+    <p style="margin: 20px 0;"><strong>Palais des Congrès, Avenue Kennedy, Yaoundé</strong></p>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.567890123456!2d11.501234!3d3.866667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwNTEnNjAuMCJOIDExwrAzMCcwNDEuMCJF!5e0!3m2!1sfr!2sde!4v1234567890" width="100%" height="400" style="border:0; border-radius:15px;" allowfullscreen="" loading="lazy"></iframe>
   </section>
 
@@ -143,7 +124,6 @@
     <h2>Hôtels à proximité</h2>
     <p>Voici quelques suggestions pour votre séjour :</p>
     <ul style="text-align: left; max-width: 600px; margin: 30px auto;">
-      <!-- CHANGEZ ICI : Hôtels -->
       <li><strong>Hilton Yaoundé</strong> – 5 min en voiture</li>
       <li><strong>Hotel Mont Fébé</strong> – 10 min</li>
       <li><strong>La Falaise Hotel</strong> – 15 min</li>
@@ -154,26 +134,19 @@
   <section>
     <h2>Vos contacts pour le mariage</h2>
     <p>Pour toute question, contactez :</p>
-    <div class="contact">
-      <!-- CHANGEZ ICI : Contact 1 -->
-      <p><strong>Votre Wedding Planner</strong><br>06 XX XX XX XX</p>
-    </div>
-    <div class="contact">
-      <!-- CHANGEZ ICI : Contact 2 -->
-      <p><strong>Témoin</strong><br>07 XX XX XX XX</p>
-    </div>
+    <div class="contact"><p><strong>Votre Wedding Planner</strong><br>06 XX XX XX XX</p></div>
+    <div class="contact"><p><strong>Témoin</strong><br>07 XX XX XX XX</p></div>
   </section>
 
   <!-- ==================== FOOTER ==================== -->
   <footer>
-    <p><!-- CHANGEZ ICI : Footer -->Patricia & Rudy – 10 janvier 2026</p>
+    <p>Patricia & Rudy – 10 janvier 2026</p>
     <p>webdesign : <a href="mailto:rudynleme@gmail.com">rudynleme@gmail.com</a></p>
   </footer>
 
   <!-- ==================== COUNTDOWN SCRIPT ==================== -->
   <script>
-    // CHANGEZ ICI : Date (AAAA, MM-1, JJ)
-    const weddingDate = new Date(2026, 0, 10); // 10 janvier 2026
+    const weddingDate = new Date(2026, 0, 10);
     function updateCountdown() {
       const now = new Date();
       const diff = weddingDate - now;
