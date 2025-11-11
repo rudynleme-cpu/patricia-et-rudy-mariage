@@ -17,27 +17,11 @@
     .hero {
       position: relative; height: 100vh; overflow: hidden; background: #000;
     }
-    .hero img {
+    .hero video {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;
     }
     .hero-content {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; z-index: 1;
-    }
-    .play-btn {
-      background: rgba(139, 90, 43, 0.9); border: none; border-radius: 50%; width: 80px; height: 80px; font-size: 2em; color: white; cursor: pointer; margin-bottom: 20px;
-    }
-    .play-btn:hover { background: #8b5a2b; }
-
-    /* POPUP */
-    #videoPopup {
-      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; 
-      justify-content: center; align-items: center; flex-direction: column;
-    }
-    #videoPopup video {
-      width: 90%; max-width: 800px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-    .close-btn {
-      position: absolute; top: 20px; right: 20px; background: none; border: none; color: white; font-size: 2.5em; cursor: pointer;
     }
 
     /* SECTIONS */
@@ -62,34 +46,31 @@
 </head>
 <body>
 
-  <!-- ==================== HERO VIDÉO AUTOPLAY (ALLEMAGNE OK) ==================== -->
-<section class="hero" style="position: relative; height: 100vh; overflow: hidden; background: #000;">
-  <!-- VIDÉO EN FOND (autoplay, muted, loop) -->
-  <video 
-    autoplay 
-    muted 
-    loop 
-    playsinline 
-    preload="auto"
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;"
-    poster="https://res.cloudinary.com/datfh3y64/image/upload/w_1920,q_auto:eco,f_auto/v1762864262/InShot_20251006_134808574_osccot.jpg">
-    
-    <!-- LIEN VIDÉO OPTIMISÉ POUR AUTOPLAY -->
-    <source src="https://res.cloudinary.com/datfh3y64/video/upload/sp_auto,q_auto:good,fl_attachment/v1762864262/InShot_20251006_134808574_osccot.mp4" type="video/mp4">
-    
-    <!-- Fallback image si vidéo échoue -->
-    <img src="https://res.cloudinary.com/datfh3y64/image/upload/w_1920,q_auto:eco,f_auto/v1762864262/InShot_20251006_134808574_osccot.jpg" 
-         alt="Patricia & Rudy" style="width:100%; height:100%; object-fit:cover;">
-  </video>
+  <!-- HERO VIDÉO AUTOPLAY (ALLEMAGNE OK) -->
+  <section class="hero">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="https://res.cloudinary.com/datfh3y64/image/upload/w_1920,q_auto:eco,f_auto/v1762864262/InShot_20251006_134808574_osccot.jpg">
+      
+      <!-- LIEN AUTOPLAY GARANTI -->
+      <source src="https://res.cloudinary.com/datfh3y64/video/upload/sp_auto,q_auto:good,fl_attachment/v1762864262/InShot_20251006_134808574_osccot.mp4" type="video/mp4">
+      
+      <!-- Fallback image -->
+      <img src="https://res.cloudinary.com/datfh3y64/image/upload/w_1920,q_auto:eco,f_auto/v1762864262/InShot_20251006_134808574_osccot.jpg" 
+           alt="Patricia & Rudy" style="width:100%; height:100%; object-fit:cover;">
+    </video>
 
-  <!-- TEXTE PAR-DESSUS -->
-  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; z-index: 1;">
-    <h1 style="font-size: 4em; text-shadow: 2px 2px 12px rgba(0,0,0,0.9); font-family: 'Dancing Script', cursive; margin: 0;">PATRICIA & RUDY</h1>
-    <p style="font-size: 1.4em; text-shadow: 1px 1px 8px rgba(0,0,0,0.8);">L’évènement à NE PAS MANQUER</p>
-    <p style="font-size: 1.2em; text-shadow: 1px 1px 6px rgba(0,0,0,0.8);">LE MARIAGE, SAISON FINALE</p>
-  </div>
-</section>
-  
+    <div class="hero-content">
+      <h1 style="font-size: 4em; text-shadow: 2px 2px 12px rgba(0,0,0,0.9); margin: 0;">PATRICIA & RUDY</h1>
+      <p style="font-size: 1.4em; text-shadow: 1px 1px 8px rgba(0,0,0,0.8);">L’évènement à NE PAS MANQUER</p>
+      <p style="font-size: 1.2em; text-shadow: 1px 1px 6px rgba(0,0,0,0.8);">LE MARIAGE, SAISON FINALE</p>
+    </div>
+  </section>
+
   <!-- INTRODUCTION -->
   <section>
     <h2>Le mariage de Patricia & Rudy</h2>
@@ -186,6 +167,17 @@
     }
     setInterval(updateCountdown, 1000);
     updateCountdown();
+  </script>
+
+  <!-- FORCE AUTOPLAY (ALLEMAGNE) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const video = document.querySelector('video');
+      video.play().catch(() => {
+        // Si autoplay bloqué, affiche le poster
+        console.log("Autoplay bloqué – image affichée");
+      });
+    });
   </script>
 </body>
 </html>
