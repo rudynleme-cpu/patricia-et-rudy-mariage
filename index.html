@@ -105,64 +105,35 @@
     </section>  <!-- Fin countdown -->
 
   <!-- COLLEZ LE CODE GALLERY ICI -->
-  <!-- ==================== LOVE GALLERY ==================== -->
-  <section style="padding: 100px 20px; background: #fdfaf7; text-align: center;">
-    <h2 style="font-size: 3em; margin-bottom: 50px; color: #8b5a2b;">Love Gallery</h2>
+  <!-- ==================== LOVE GALLERY – PHOTOS PLEINE TAILLE + FLÈCHES DISCRÈTES ==================== -->
+<section style="padding: 100px 20px; background: #fdfaf7; text-align: center;">
+  <h2 style="font-size: 3em; margin borrowing: 50px; color: #8b5a2b;">Love Gallery</h2>
 
-    <!-- CONTENEUR SCROLL HORIZONTAL -->
-    <div style="position: relative; max-width: 100%; overflow: hidden;">
-      <!-- FLÈCHE GAUCHE -->
-      <button onclick="scrollGallery(-1)" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(139,90,43,0.8); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; font-size: 1.5em; cursor: pointer; z-index: 10; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: background 0.3s;">
-        ←
-      </button>
-
-      <!-- GALLERY SCROLL (8 PHOTOS) -->
-      <div id="galleryContainer" style="display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 20px; padding: 20px 60px; scrollbar-width: none; -ms-overflow-style: none;">
-        <div style="min-width: 300px; height: 200px; flex-shrink: 0; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-          <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_1.jpg" alt="Photo 1" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="min-width: 300px; height: 200px; flex-shrink: 0; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-          <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_2.jpg" alt="Photo 2" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="min-width: 300px; height: 200px; flex-shrink: 0; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-          <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_3.jpg" alt="Photo 3" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="min-width: 300px; height: 200px; flex-shrink: 0; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-          <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_4.jpg" alt="Photo 4" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="min-width: 300px; height: 200px; flex-shrink: 0; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-          <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_5.jpg" alt="Photo 5" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="min-width: 300px; height: 200px; flex-shrink: 0; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-          <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_6.jpg" alt="Photo 6" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="min-width: 300px; height: 200px; flex-shrink: 0; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-          <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_7.jpg" alt="Photo 7" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="min-width: 300px; height: 200px; flex-shrink: 0; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-          <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_8.jpg" alt="Photo 8" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-    </div>
-
-    <!-- FLÈCHE DROITE -->
-    <button onclick="scrollGallery(1)" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(139,90,43,0.8); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; font-size: 1.5em; cursor: pointer; z-index: 10; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: background 0.3s; hover: background: rgba(139,90,43,1);">
-      →
+  <!-- CONTENEUR SCROLL -->
+  <div style="position: relative; max-width: 100%; overflow: hidden; padding: 0 50px;">
+    
+    <!-- FLÈCHE GAUCHE (discrète) -->
+    <button onclick="scrollGallery(-1)" 
+            style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); 
+                   background: rgba(139,90,43,0.3); color: white; border: none; 
+                   width: 40px; height: 40px; border-radius: 50%; font-size: 1.2em; 
+                   cursor: pointer; z-index: 10; transition: all 0.3s; 
+                   box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      ‹
     </button>
-  </div>
+    <button onclick="scrollGallery(-1)" 
+            style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); 
+                   opacity: 0; width: 40px; height: 40px; cursor: pointer; z-index: 9;"
+            onmouseover="this.previousElementSibling.style.background='rgba(139,90,43,0.7)'; this.previousElementSibling.style.transform='translateY(-50%) scale(1.1)';"
+            onmouseout="this.previousElementSibling.style.background='rgba(139,90,43,0.3)'; this.previousElementSibling.style.transform='translateY(-50%) scale(1)';">
+    </button>
 
-  <!-- STYLE POUR MASQUER LA BARRE DE SCROLL -->
-  <style>
-    #galleryContainer::-webkit-scrollbar { display: none; }
-    #galleryContainer { -ms-overflow-style: none; scrollbar-width: none; }
-  </style>
-
-  <!-- SCRIPT DE SCROLL (DROITE À GAUCHE) -->
-  <script>
-    function scrollGallery(direction) {
-      const container = document.getElementById('galleryContainer');
-      const scrollAmount = 320; // largeur photo + gap
-      container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-    }
+    <!-- GALLERY – PHOTOS EN PLEINE TAILLE -->
+    <div id="galleryContainer" 
+         style="display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 25px; 
+                padding: 20px 0; scrollbar-width: none; -ms-overflow-style: none;">
+      
+      <!-- PHOTO
   </script>
 </section>
   <!-- ==================== PROGRAMME ==================== -->
