@@ -47,17 +47,57 @@
 </head>
 <body>
 
-  <!-- ==================== HERO – FOND NOIR + VIDÉO ==================== -->
-  <section class="hero">
-    
-    <iframe class="hero__video" src="https://player.vimeo.com/video/1135758370?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-  </section>
+  <!-- ==================== HERO – COMPTE À REBOURS 2S → VIDÉO ==================== -->
+<section class="hero">
+  <!-- COMPTE À REBOURS (2 SECONDES) -->
+  <div id="heroCountdown" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                                z-index: 10; text-align: center; color: white;">
+    <h1 style="font-family: 'Dancing Script', cursive; font-size: 6rem; margin: 0; 
+               text-shadow: 3px 3px 10px rgba(0,0,0,0.8);">
+      <span id="countdownNumber">2</span>
+    </h1>
+  </div>
+
+  <!-- CONTENU HERO (TITRE + SOUS-TITRE) -->
+  <div class="hero__content" style="opacity: 0; transition: opacity 0.8s ease;">
+
+  <!-- VIDÉO EN FOND -->
+  <iframe id="heroVideo" class="hero__video" 
+          src="https://player.vimeo.com/video/1135758370?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0" 
+          width="1920" height="1080" frameborder="0" 
+          allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+  </iframe>
+</section>
+
+<!-- SCRIPT : COMPTE À REBOURS 2S → DISPARITION + AFFICHAGE TITRE -->
+<script>
+  const countdownEl = document.getElementById('countdownNumber');
+  const heroContent = document.querySelector('.hero__content');
+  let count = 2;
+
+  const countdownInterval = setInterval(() => {
+    count--;
+    countdownEl.textContent = count;
+
+    if (count <= 0) {
+      clearInterval(countdownInterval);
+      document.getElementById('heroCountdown').style.display = 'none';
+      heroContent.style.opacity = '1'; // Affiche le titre
+    }
+  }, 1000);
+
+  // Démarre la vidéo dès le chargement
+  document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('heroVideo');
+    video.play?.();
+  });
+</script>
 
   <!-- ==================== INTRODUCTION ==================== -->
   <section>
     <h2>Once Upon The Nlems</h2>
     <p>Plongez dans une histoire d’amour à la Nayley ;) (One Three Hill). Un casting d’exception, un décor de rêve et un scénario rempli d’émotions...</p>
-    <p style="margin-top: 20px; font-size: 1.3em;">
+    <p style="margin-top: 20px; font-size: 1.2em;">
       Le <strong>10 janvier 2026</strong>, rejoignez-nous dans <strong>les Jardins de Jeanne & César</strong> pour célébrer notre union !
     </p>
   </section>
