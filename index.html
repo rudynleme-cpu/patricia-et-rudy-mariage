@@ -1,1 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mariage Patricia & Rudy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    /* === RESET & TYPO === */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Playfair Display', serif; background: #fdfaf7; color: #5d4037; line-height: 1.7; }
+    h1, h2, h3 { font-family: 'Dancing Script', cursive; color: #8b5a2b; }
+    p, li { font-family: 'Montserrat', sans-serif; font-weight: 300; color: #6d4c41; }
+    a { color: #8b5a2b; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
+    /* === HERO SECTION === */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .hero h1 { font-size: 4.5em; margin-bottom: 10px; }
+    .hero p { font-size: 1.4em; margin: 8px 0; }
+
+    /* === SECTIONS === */
+    section { padding: 80px 20px; max-width: 900px; margin: 0 auto; text-align: center; }
+    h2 { font-size: 3em; margin-bottom: 30px; }
+    ul { list-style: none; font-size: 1.2em; }
+
+    /* === COUNTDOWN === */
+    #countdown { font-size: 2em; font-weight: bold; margin: 40px 0; color: #8b5a2b; }
+    .time-unit { display: inline-block; margin: 0 15px; }
+
+    /* === PROGRAMME === */
+    .programme-item { margin: 30px 0; font-size: 1.3em; }
+    .programme-item strong { color: #8b5a2b; }
+
+    /* === DRESS CODE === */
+    .dresscode { background: #f9e4d4; padding: 40px; border-radius: 15px; margin: 40px 0; }
+
+    /* === CONTACTS === */
+    .contact { margin: 25px 0; font-size: 1.1em; }
+    .contact strong { color: #8b5a2b; }
+
+    /* === FOOTER === */
+    footer { text-align: center; padding: 40px; font-size: 0.9em; color: #999; }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 3em; }
+      h2 { font-size: 2.2em; }
+      section { padding: 60px 15px; }
+    }
+  </style>
+</head>
+<body>
+
+ <!-- ==================== HERO AVEC VOTRE VIDÉO ==================== -->
+<section class="hero" style="position: relative; overflow: hidden; height: 100vh;">
+  <video autoplay muted loop playsinline preload="auto" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+    <!-- LIEN DIRECT DE VOTRE VIDÉO -->
+    <source src="https://res.cloudinary.com/datfh3y64/video/upload/InShot_20251006_134808574_osccot.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
+
+  <div style="position: relative; z-index: 1; padding: 20px; text-align: center; color: white;">
+    <h1 style="font-size: 4em; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); font-family: 'Dancing Script', cursive;">PATRICIA & RUDY</h1>
+    <p style="font-size: 1.4em; text-shadow: 1px 1px 8px rgba(0,0,0,0.7);">L’évènement à NE PAS MANQUER</p>
+    <p style="font-size: 1.2em; text-shadow: 1px 1px 6px rgba(0,0,0,0.7);">LE MARIAGE, SAISON FINALE</p>
+  </div>
+</section>
+  <!-- ==================== INTRODUCTION ==================== -->
+  <section>
+    <h2>Le mariage de Patricia & Rudy</h2>
+    <p>
+      <!-- PERSONNALISEZ ICI : Votre texte d’intro -->
+      Plongez dans une histoire d’amour inoubliable. Un casting d’exception, un décor de rêve et un scénario rempli d’émotions…
+    </p>
+    <p style="margin-top: 20px; font-size: 1.3em;">
+      <!-- PERSONNALISEZ ICI : Date + lieu -->
+      Le <strong>10 janvier 2026</strong>, rejoignez-nous à <strong>Yaoundé</strong> pour célébrer notre grand jour !
+    </p>
+  </section>
+
+  <!-- ==================== TITRE FUN ==================== -->
+  <section style="background: #8b5a2b; color: white; padding: 60px 20px;">
+    <h2 style="color: white;">
+      <!-- PERSONNALISEZ ICI : Votre nom de mariage fun -->
+      PATRICIA & RUDY LOVE
+    </h2>
+  </section>
+
+  <!-- ==================== INVITATION ==================== -->
+  <section>
+    <h2>Notre invitation, rien que pour vous !</h2>
+    <p>
+      <!-- PERSONNALISEZ ICI : Lien vers le PDF ou page d'invitation -->
+      <a href="https://rudynleme-cpu.github.io/mariage-invitations/" target="_blank" style="font-weight: bold; font-size: 1.2em;">
+        Téléchargez votre invitation personnalisée
+      </a>
+    </p>
+  </section>
+
+  <!-- ==================== COUNTDOWN ==================== -->
+  <section>
+    <h2>Le grand jour approche</h2>
+    <p>
+      <!-- PERSONNALISEZ ICI : Date du mariage (format AAAA,MM,JJ) -->
+      Le <strong>10 janvier 2026</strong>, nous nous dirons ‘Oui’ entourés de nos proches.
+    </p>
+    <div id="countdown">
+      <span class="time-unit" id="days">00</span> Jours
+      <span class="time-unit" id="hours">00</span> Heures
+      <span class="time-unit" id="minutes">00</span> Minutes
+      <span class="time-unit" id="seconds">00</span> Secondes
+    </div>
+  </section>
+
+  <!-- ==================== PROGRAMME ==================== -->
+  <section id="programme">
+    <h2>Programme du grand jour</h2>
+    <p>Du premier regard jusqu’à la dernière danse, chaque instant est pensé pour être inoubliable.</p>
+
+    <div class="programme-item">
+      <!-- PERSONNALISEZ ICI : Heure + événement -->
+      <strong>10h00</strong> : Cérémonie religieuse
+    </div>
+    <div class="programme-item">
+      <strong>13h00</strong> : Vin d’honneur
+    </div>
+    <div class="programme-item">
+      <strong>15h00</strong> : Réception & buffet
+    </div>
+
+    <div class="dresscode">
+      <p><strong>Dress code :</strong></p>
+      <!-- PERSONNALISEZ ICI : Votre dress code -->
+      <p><strong>‘Color & White’</strong> – Osez les couleurs vibrantes et audacieuses pour la cérémonie</p>
+      <p><strong>‘Bon Chic Bon Genre’</strong> – Élégance pour la soirée</p>
+      <p style="margin-top: 15px; font-style: italic;">
+        Merci de ne pas ajouter d’invités et de prévoir une garde pour vos enfants.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== LIEU ==================== -->
+  <section>
+    <h2>Un lieu d’exception à Yaoundé</h2>
+    <p>
+      <!-- PERSONNALISEZ ICI : Description du lieu -->
+      Nous avons choisi un cadre chaleureux et prestigieux pour accueillir cette journée pleine de joie.
+    </p>
+    <p style="margin: 20px 0;">
+      <!-- PERSONNALISEZ ICI : Adresse complète -->
+      <strong>Palais des Congrès, Avenue Kennedy, Yaoundé</strong>
+    </p>
+    <!-- PERSONNALISEZ ICI : Lien Google Maps -->
+    <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_LINK_HERE" width="100%" height="400" style="border:0; border-radius:15px;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <!-- ==================== HÉBERGEMENT ==================== -->
+  <section>
+    <h2>Hôtels à proximité</h2>
+    <p>Voici quelques suggestions pour votre séjour :</p>
+    <ul style="text-align: left; max-width: 600px; margin: 30px auto;">
+      <!-- PERSONNALISEZ ICI : Ajoutez/supprimez des hôtels -->
+      <li><strong>Hilton Yaoundé</strong> – 5 min en voiture</li>
+      <li><strong>Hotel Mont Fébé</strong> – 10 min</li>
+      <li><strong>La Falaise Hotel</strong> – 15 min</li>
+    </ul>
+  </section>
+
+  <!-- ==================== CONTACTS ==================== -->
+  <section>
+    <h2>Vos contacts pour le mariage</h2>
+    <p>Pour toute question, contactez :</p>
+    <div class="contact">
+      <!-- PERSONNALISEZ ICI : Nom + rôle + téléphone -->
+      <p><strong>Votre Wedding Planner</strong><br>06 XX XX XX XX</p>
+    </div>
+    <div class="contact">
+      <p><strong>Témoin</strong><br>07 XX XX XX XX</p>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <p>Patricia & Rudy – 10 janvier 2026</p>
+    <p>webdesign : <a href="mailto:votre@email.com">votre@email.com</a></p>
+  </footer>
+
+  <!-- ==================== COUNTDOWN SCRIPT ==================== -->
+  <script>
+    // PERSONNALISEZ ICI : Date du mariage (AAAA, MM-1, JJ)
+    const weddingDate = new Date(2026, 0, 10); // 10 janvier 2026
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = weddingDate - now;
+
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = "C'EST AUJOURD'HUI !";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = days.toString().padStart(2, '0');
+      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
