@@ -60,32 +60,45 @@
 </head>
 <body>
   
-<!-- ==================== HERO AVEC VOTRE VIDÉO (VERSION FINALE) ==================== -->
-<section class="hero" style="position: relative; overflow: hidden; height: 100vh; background: #000;">
-  <video 
-    autoplay 
-    muted 
-    loop 
-    playsinline 
-    preload="auto" 
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;"
-    poster="https://res.cloudinary.com/datfh3y64/image/upload/w_1920,q_auto/v1762864262/InShot_20251006_134808574_osccot.jpg">
-    
-    <!-- VOTRE LIEN VIDÉO OPTIMISÉ -->
-    <source src="https://res.cloudinary.com/datfh3y64/video/upload/f_auto,q_auto:good/v1762864262/InShot_20251006_134808574_osccot.mp4" type="video/mp4">
-    <source src="https://res.cloudinary.com/datfh3y64/video/upload/f_auto,q_auto:good/v1762864262/InShot_20251006_134808574_osccot.webm" type="video/webm">
-    
-    <!-- Fallback : Image de secours -->
-    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1350&q=80" 
-         alt="Patricia & Rudy" style="width:100%; height:100%; object-fit:cover;">
-  </video>
-
-  <div style="position: relative; z-index: 1; padding: 20px; text-align: center; color: white;">
-    <h1 style="font-size: 4em; text-shadow: 2px 2px 12px rgba(0,0,0,0.9); font-family: 'Dancing Script', cursive;">PATRICIA & RUDY</h1>
+<!-- ==================== HERO AVEC VIDÉO POPUP (FIX FINAL) ==================== -->
+<section class="hero" style="position: relative; height: 100vh; background: #000;">
+  <!-- IMAGE DE FOND (votre vidéo comme poster) -->
+  <img src="https://res.cloudinary.com/datfh3y64/image/upload/w_1920,q_auto,f_auto/v1762864262/InShot_20251006_134808574_osccot.jpg" 
+       alt="Patricia & Rudy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+  
+  <!-- BOUTON POUR JOUER LA VIDÉO EN PLEIN ÉCRAN -->
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+    <button onclick="playVideo()" style="background: rgba(139, 90, 43, 0.8); border: none; border-radius: 50%; width: 80px; height: 80px; font-size: 2em; color: white; cursor: pointer; margin-bottom: 20px;">
+      ▶
+    </button>
+    <h1 style="font-size: 4em; text-shadow: 2px 2px 12px rgba(0,0,0,0.9); font-family: 'Dancing Script', cursive; margin: 0;">PATRICIA & RUDY</h1>
     <p style="font-size: 1.4em; text-shadow: 1px 1px 8px rgba(0,0,0,0.8);">L’évènement à NE PAS MANQUER</p>
     <p style="font-size: 1.2em; text-shadow: 1px 1px 6px rgba(0,0,0,0.8);">LE MARIAGE, SAISON FINALE</p>
   </div>
 </section>
+
+<!-- POPUP VIDÉO (MASQUÉE PAR DÉFAUT) -->
+<div id="videoPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center;">
+  <button onclick="closeVideo()" style="position: absolute; top: 20px; right: 20px; background: none; border: none; color: white; font-size: 2em; cursor: pointer;">&times;</button>
+  <video controls width="80%" height="80%" style="border-radius: 10px;">
+    <!-- VOTRE VIDÉO EN PLEIN ÉCRAN -->
+    <source src="https://res.cloudinary.com/datfh3y64/video/upload/v1762864262/InShot_20251006_134808574_osccot.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
+</div>
+
+<!-- SCRIPT POUR LA POPUP -->
+<script>
+  function playVideo() {
+    document.getElementById('videoPopup').style.display = 'flex';
+    document.querySelector('#videoPopup video').play();
+  }
+  
+  function closeVideo() {
+    document.getElementById('videoPopup').style.display = 'none';
+    document.querySelector('#videoPopup video').pause();
+  }
+</script>
   
   <!-- ==================== INTRODUCTION ==================== -->
   <section>
