@@ -260,14 +260,71 @@
     <div class="programme-item"><strong>16h00 à 17h00</strong> : Cérémonie civile</div>
     <div class="programme-item"><strong>17h00 à 18h30</strong> : Vin d'honneur</div>
     <div class="programme-item"><strong>19h00 à 23h00</strong> : Soirée</div>
-    <!-- TITRE -->
-  <h2 style="font-size: 3em; margin-bottom: 50px; color: #8b5a2b;">Moodboard</h2>
-      <p><strong>Dress code :</strong></p>
-      <p><strong>'Élégance automnale'</strong> – Rien de tel que le thème classique des feuilles d’automne pour recréer l’atmosphère cozy,
-romantique et réconfortante propre à cette saison et que nous aimerions retrouver à notre mariage
+
+    <!-- ==================== MOODBOARD – AVEC 4 PHOTOS DÉFILANTES ==================== -->
+<section style="padding: 100px 20px; background: #fdfaf7; text-align: center;">
+  <h2 style="font-size: 3em; margin-bottom: 50px; color: #8b5a2b; font-family: 'Dancing Script', cursive;">
+    Moodboard
+  </h2>
+
+  <!-- TEXTE D'INTRODUCTION -->
+ <p><strong>Dress code :</strong></p>
+
+<p style="max-width: 800px; margin: 0 auto 30px; font-size: 1.2em; line-height: 1.8; color: #6d4c41; font-family: 'Montserrat', sans-serif; font-weight: 300;">
+  <strong>'Élégance automnale'</strong> – Rien de tel que le thème classique des feuilles d’automne pour recréer l’atmosphère cozy, romantique et réconfortante propre à cette saison et que nous aimerions retrouver à notre mariage.
 </p>
-      <p><strong>'Cérémonie traditionnelle. Civile. Réception'</strong> – Pensez à des teintes chaudes comme l’orange, le rouge, le marron et le jaune doré.
-Laissez libre cours à votre créativité… tout en restant dans l’élégance !</p>
+
+<p style="max-width: 800px; margin: 0 auto 60px; font-size: 1.2em; line-height: 1.8; color: #6d4c41; font-family: 'Montserrat', sans-serif; font-weight: 300;">
+  <strong>'Cérémonie traditionnelle. Civile. Réception'</strong> – Pensez à des teintes chaudes comme l’orange, le rouge, le marron et le jaune doré. Laissez libre cours à votre créativité… tout en restant dans l’élégance !
+</p>
+
+  <!-- GALLERY – 4 PHOTOS 320×480, SCROLL HORIZONTAL -->
+  <div id="moodboardGallery" 
+       style="display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 20px; 
+              padding: 20px 0; scrollbar-width: none; -ms-overflow-style: none; 
+              justify-content: flex-start;">
+    
+    <!-- PHOTO 1 -->
+    <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; 
+                box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
+      <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/76dd887f7b2bd826bdb85599de5b10a07f22ff71/Moodboard_1.jpg" 
+           alt="Moodboard 1" 
+           style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+
+    <!-- PHOTO 2 -->
+    <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; 
+                box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
+      <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/76dd887f7b2bd826bdb85599de5b10a07f22ff71/Moodboard_2.jpg" 
+           alt="Moodboard 2" 
+           style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+
+    <!-- PHOTO 3 -->
+    <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; 
+                box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
+      <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/76dd887f7b2bd826bdb85599de5b10a07f22ff71/Moodboard_3.jpg" 
+           alt="Moodboard 3" 
+           style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+
+    <!-- PHOTO 4 -->
+    <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; 
+                box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
+      <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/76dd887f7b2bd826bdb85599de5b10a07f22ff71/Moodboard_4.jpg" 
+           alt="Moodboard 4" 
+           style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+
+  </div>
+
+  <!-- CACHAGE SCROLLBAR + EFFET HOVER -->
+  <style>
+    #moodboardGallery::-webkit-scrollbar { display: none; }
+    #moodboardGallery { -ms-overflow-style: none; scrollbar-width: none; }
+    #moodboardGallery > div:hover { transform: translateY(-12px); }
+  </style>
+</section>
 
  <!-- ==================== CADEAUX – SANS FOND BLANC, POLICE RÉDUITE D’1/3 ==================== -->
 <section style="text-align: center; background: #fdfaf7; padding-top: 100px;">
