@@ -4,12 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mariage Patricia & Rudy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- GOOGLE FONTS : BELLEZA + DANCING SCRIPT -->
+  <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Playfair Display', serif; background: #fdfaf7; color: #5d4037; line-height: 1.7; overflow-x: hidden; }
-    h1, h2, h3 { font-family: 'Dancing Script', cursive; color: #8b5a2b; }
-    p, li { font-family: 'Montserrat', sans-serif; font-weight: 300; color: #6d4c41; }
+    
+    /* POLICE GLOBALE : BELLEZA POUR LE TEXTE */
+    body, p, li, span, div, a, em, strong, .contact, .programme-item {
+      font-family: 'Belleza', sans-serif !important;
+      font-weight: 400;
+      color: #6d4c41;
+      line-height: 1.8;
+    }
+
+    /* TITRES : DANCING SCRIPT + 25% PLUS GRANDS */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Dancing Script', cursive !important;
+      font-size: 3.75em !important; /* 3em × 1.25 */
+      color: #8b5a2b !important;
+      margin-bottom: 50px !important;
+      text-align: center;
+    }
+
+    /* AJUSTEMENT POUR H3 (si trop grand) */
+    h3 {
+      font-size: 2.8em !important;
+    }
+
+    body { background: #fdfaf7; overflow-x: hidden; }
     a { color: #8b5a2b; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
@@ -20,13 +44,12 @@
       color: #fff; background: #000 !important;
     }
     .hero__content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
-    .hero__title { font-family: 'Dancing Script', cursive; font-size: 5rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); line-height: 1.2; }
-    .hero__subtitle { font-size: 1.5rem; margin: 0.5rem 0; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); font-weight: 300; }
+    .hero__title { font-size: 5rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); line-height: 1.2; }
+    .hero__subtitle { font-size: 1.5rem; margin: 0.5rem 0; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
     .hero__video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; object-fit: cover; }
 
     /* SECTIONS */
     section { padding: 100px 20px; max-width: 900px; margin: 0 auto; text-align: center; }
-    h2 { font-size: 3em; margin-bottom: 30px; }
     .programme-item { margin: 30px 0; font-size: 1.3em; }
     .programme-item strong { color: #8b5a2b; }
     .dresscode { background: #f9e4d4; padding: 40px; border-radius: 15px; margin: 40px 0; }
@@ -34,70 +57,60 @@
     .contact strong { color: #8b5a2b; }
     footer { text-align: center; padding: 40px; font-size: 0.9em; color: #999; }
 
-    #countdown { font-size: 2em; font-weight: bold; margin: 40px 0; color: #8b5a2b; }
+    #countdown { font-size: 2.8em; font-weight: bold; margin: 40px 0; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); }
     .time-unit { display: inline-block; margin: 0 15px; }
 
     @media (max-width: 768px) {
       .hero__title { font-size: 3rem; }
       .hero__subtitle { font-size: 1.2rem; }
-      h2 { font-size: 2.2em; }
+      h2 { font-size: 2.8em !important; }
       section { padding: 60px 15px; }
     }
   </style>
 </head>
 <body>
 
- <!-- ==================== HERO – COMPTE À REBOURS 2S → VIDÉO SEULE ==================== -->
-<section class="hero">
-  <!-- COMPTE À REBOURS (2 SECONDES) -->
-  <div id="heroCountdown" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
-                                z-index: 10; text-align: center; color: white; width: 100%;">
-    <h1 style="font-family: 'Dancing Script', cursive; font-size: 7rem; margin: 0; 
-               text-shadow: 3px 3px 12px rgba(0,0,0,0.9);">
-      <span id="countdownNumber">2</span>
-    </h1>
-  </div>
+  <!-- ==================== HERO – COMPTE À REBOURS 2S → VIDÉO SEULE ==================== -->
+  <section class="hero">
+    <div id="heroCountdown" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                                  z-index: 10; text-align: center; color: white; width: 100%;">
+      <h1 style="font-family: 'Dancing Script', cursive; font-size: 7rem; margin: 0;
+                 text-shadow: 3px 3px 12px rgba(0,0,0,0.9);">
+        <span id="countdownNumber">2</span>
+      </h1>
+    </div>
+    <iframe id="heroVideo" class="hero__video"
+            src="https://player.vimeo.com/video/1135758370?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0"
+            width="1920" height="1080" frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+            style="opacity: 0; transition: opacity 1s ease;">
+    </iframe>
+  </section>
 
-  <!-- VIDÉO EN FOND (cachée au début) -->
-  <iframe id="heroVideo" class="hero__video" 
-          src="https://player.vimeo.com/video/1135758370?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0" 
-          width="1920" height="1080" frameborder="0" 
-          allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-          style="opacity: 0; transition: opacity 1s ease;">
-  </iframe>
-</section>
-
-<!-- SCRIPT : COMPTE À REBOURS → VIDÉO APPARAÎT EN FONDU -->
-<script>
-  const countdownEl = document.getElementById('countdownNumber');
-  const videoEl = document.getElementById('heroVideo');
-  const countdownContainer = document.getElementById('heroCountdown');
-  let count = 2;
-
-  const countdownInterval = setInterval(() => {
-    count--;
-    countdownEl.textContent = count;
-
-    if (count <= 0) {
-      clearInterval(countdownInterval);
-      // Disparition du compte à rebours
-      countdownContainer.style.opacity = '0';
-      countdownContainer.style.transition = 'opacity 1.0s ease';
-      
-      // Apparition de la vidéo en fondu
-      setTimeout(() => {
-        countdownContainer.style.display = 'none';
-        videoEl.style.opacity = '1';
-      }, 600);
-    }
-  }, 1000);
-
-  // Forcer le démarrage de la vidéo
-  document.addEventListener('DOMContentLoaded', () => {
-    const iframe = document.getElementById('heroVideo');
-    iframe.src += "&autoplay=1&muted=1";
-  });
-</script>
+  <!-- SCRIPT : COMPTE À REBOURS → VIDÉO APPARAÎT EN FONDU -->
+  <script>
+    const countdownEl = document.getElementById('countdownNumber');
+    const videoEl = document.getElementById('heroVideo');
+    const countdownContainer = document.getElementById('heroCountdown');
+    let count = 2;
+    const countdownInterval = setInterval(() => {
+      count--;
+      countdownEl.textContent = count;
+      if (count <= 0) {
+        clearInterval(countdownInterval);
+        countdownContainer.style.opacity = '0';
+        countdownContainer.style.transition = 'opacity 1.0s ease';
+        setTimeout(() => {
+          countdownContainer.style.display = 'none';
+          videoEl.style.opacity = '1';
+        }, 600);
+      }
+    }, 1000);
+    document.addEventListener('DOMContentLoaded', () => {
+      const iframe = document.getElementById('heroVideo');
+      iframe.src += "&autoplay=1&muted=1";
+    });
+  </script>
 
   <!-- ==================== INTRODUCTION ==================== -->
   <section>
@@ -105,319 +118,180 @@
     <p>Plongez dans une histoire d’amour à la Nayley (One Three Hill). Un casting d’exception, un décor de rêve et un scénario rempli d’émotions...</p>
     <p style="margin-top: 20px; font-size: 1.2em;">
       Le <strong>10 janvier 2026</strong>, rejoignez-nous dans <strong>les Jardins de Jeanne & César</strong> pour célébrer notre union !
-    <p style="margin-top: 20px; font-size: 1.2em;">
+    </p>
   </section>
 
-  <!-- ==================== INVITATION + IMAGE ICI ==================== -->
+  <!-- ==================== INVITATION + IMAGE ==================== -->
   <section>
     <h2>Save the date !</h2>
     <p>
       Parce que l'amour se savoure dans la simplicité et le partage, nous avons décidé de célébrer notre union en toute intimité aux côtés de notre famille et de nos amis les plus proches.
     </p>
-
-    <!-- IMAGE INSÉRÉE ICI -->
-    <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/47744f382a94d69b210310fb389d759462e5647e/invit-mariage.jpg" 
-     alt="Patricia & Rudy" 
-     style="max-width: 100%; height: auto; border-radius: 15px; margin: 30px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-    <p>
- 
-      </a>
-    </p>
+    <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/47744f382a94d69b210310fb389d759462e5647e/invit-mariage.jpg"
+         alt="Patricia & Rudy"
+         style="max-width: 100%; height: auto; border-radius: 15px; margin: 30px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
   </section>
 
- <!-- ==================== COUNTDOWN – TITRE AVANT L'IMAGE ==================== -->
-<section style="text-align: center; background: #fdfaf7; padding-top: 100px;">
-  
-  <!-- TITRE "COUNTDOWN" AVANT L'IMAGE – MÊME STYLE QUE LOVE GALLERY -->
-  <h2 style="font-size: 3em; margin-bottom: 50px; color: #8b5a2b; 
-             font-family: 'Dancing Script', cursive;">
-    Countdown
-  </h2>
-
-  <!-- SECTION AVEC IMAGE EN FOND -->
-  <div style="position: relative; padding: 120px 20px; background: #000; color: white; overflow: hidden;">
-    
-    <!-- IMAGE EN ARRIÈRE-PLAN -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; 
-                background: url('https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/43ccdb363ba8e188ad385567c515cd952224b46b/Countdown.jpg') center/cover no-repeat; 
-                filter: brightness(0.5) opacity(1.0);">
-    </div>
-
-    <!-- CONTENU PAR-DESSUS -->
-    <div style="position: relative; z-index: 2; max-width: 900px; margin: 0 auto;">
-      
-      <p style="margin-bottom: 40px; font-size: 1.3em; color: white; text-shadow: 1px 1px 6px rgba(0,0,0,0.7);">
-        Le <strong>10 janvier 2026</strong>, nous nous dirons 'Oui' entourés de nos proches.
-      </p>
-
-      <!-- COMPTE À REBOURS -->
-      <div id="countdown" style="font-size: 2.8em; font-weight: bold; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.8);">
-        <span class="time-unit" id="days">00</span> Jours
-        <span class="time-unit" id="hours">00</span> Heures
-        <span class="time-unit" id="minutes">00</span> Minutes
-        <span class="time-unit" id="seconds">00</span> Secondes
+  <!-- ==================== COUNTDOWN ==================== -->
+  <section style="text-align: center; background: #fdfaf7; padding-top: 100px;">
+    <h2>Countdown</h2>
+    <div style="position: relative; padding: 120px 20px; background: #000; color: white; overflow: hidden;">
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+                  background: url('https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/43ccdb363ba8e188ad385567c515cd952224b46b/Countdown.jpg') center/cover no-repeat;
+                  filter: brightness(0.5) opacity(1.0);">
+      </div>
+      <div style="position: relative; z-index: 2; max-width: 900px; margin: 0 auto;">
+        <p style="margin-bottom: 40px; font-size: 1.3em; color: white; text-shadow: 1px 1px 6px rgba(0,0,0,0.7);">
+          Le <strong>10 janvier 2026</strong>, nous nous dirons 'Oui' entourés de nos proches.
+        </p>
+        <div id="countdown">
+          <span class="time-unit" id="days">00</span> Jours
+          <span class="time-unit" id="hours">00</span> Heures
+          <span class="time-unit" id="minutes">00</span> Minutes
+          <span class="time-unit" id="seconds">00</span> Secondes
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- ==================== LOVE GALLERY – AVEC TEXTE D'INTRODUCTION ==================== -->
-<section style="padding: 100px 20px; background: #fdfaf7; text-align: center;">
+  </section>
 
-  <!-- TITRE -->
-  <h2 style="font-size: 3em; margin-bottom: 50px; color: #8b5a2b;">Love Gallery</h2>
-
-  <!-- TEXTE D'INTRODUCTION -->
-  <p style="max-width: 800px; margin: 0 auto 40px; font-size: 1.3em; line-height: 1.8; 
-             color: #6d4c41; font-family: 'Montserrat', sans-serif; font-weight: 300;">
-    Avant de vivre ensemble cette grande journée, voici quelques souvenirs que nous souhaitons partager avec vous. 
-    Faites défiler, souriez et revivez ces instants avec nous !
-  </p>
-  
-  <!-- GALLERY – PHOTOS 320×480 -->
-  <div id="galleryContainer" 
-       style="display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 20px; 
-              padding: 20px 0; scrollbar-width: none; -ms-overflow-style: none; 
-              justify-content: flex-start;">
-    
-    <!-- PHOTO 1 -->
-    <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; 
-                box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
-      <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_1.jpg" 
-           alt="Love 1" 
-           style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  <!-- ==================== LOVE GALLERY ==================== -->
+  <section style="padding: 100px 20px; background: #fdfaf7; text-align: center;">
+    <h2>Love Gallery</h2>
+    <p style="max-width: 800px; margin: 0 auto 40px; font-size: 1.3em;">
+      Avant de vivre ensemble cette grande journée, voici quelques souvenirs que nous souhaitons partager avec vous.
+      Faites défiler, souriez et revivez ces instants avec nous !
+    </p>
+    <div id="galleryContainer" style="display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 20px; padding: 20px 0; scrollbar-width: none; -ms-overflow-style: none; justify-content: flex-start;">
+      <!-- 8 PHOTOS LOVE GALLERY -->
+      <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
+        <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_1.jpg" alt="Love 1" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
+        <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_2.jpg" alt="Love 2" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
+        <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_3.jpg" alt="Love 3" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
+        <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_4.jpg" alt="Love 4" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
+        <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_5.jpg" alt="Love 5" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
+        <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_6.jpg" alt="Love 6" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
+        <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_7.jpg" alt="Love 7" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
+        <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_8.jpg" alt="Love 8" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
     </div>
+    <style>
+      #galleryContainer::-webkit-scrollbar { display: none; }
+      #galleryContainer { -ms-overflow-style: none; scrollbar-width: none; }
+      #galleryContainer > div:hover { transform: translateY(-12px); }
+    </style>
+  </section>
 
-    <!-- PHOTO 2 -->
-    <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; 
-                box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
-      <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_2.jpg" 
-           alt="Love 2" 
-           style="width: 100%; height: 100%; object-fit: cover; display: block;">
-    </div>
-
-    <!-- PHOTO 3 -->
-    <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; 
-                box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
-      <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_3.jpg" 
-           alt="Love 3" 
-           style="width: 100%; height: 100%; object-fit: cover; display: block;">
-    </div>
-
-    <!-- PHOTO 4 -->
-    <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; 
-                box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
-      <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_4.jpg" 
-           alt="Love 4" 
-           style="width: 100%; height: 100%; object-fit: cover; display: block;">
-    </div>
-
-    <!-- PHOTO 5 -->
-    <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; 
-                box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
-      <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_5.jpg" 
-           alt="Love 5" 
-           style="width: 100%; height: 100%; object-fit: cover; display: block;">
-    </div>
-
-    <!-- PHOTO 6 -->
-    <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; 
-                box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
-      <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_6.jpg" 
-           alt="Love 6" 
-           style="width: 100%; height: 100%; object-fit: cover; display: block;">
-    </div>
-
-    <!-- PHOTO 7 -->
-    <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; 
-                box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
-      <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_7.jpg" 
-           alt="Love 7" 
-           style="width: 100%; height: 100%; object-fit: cover; display: block;">
-    </div>
-
-    <!-- PHOTO 8 -->
-    <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; 
-                box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
-      <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/3050d2966794302831470b61cbabd5e5edc38bc1/Love_Gallery_8.jpg" 
-           alt="Love 8" 
-           style="width: 100%; height: 100%; object-fit: cover; display: block;">
-    </div>
-
-  </div>
-
-  <!-- CACHAGE SCROLLBAR + EFFET HOVER -->
-  <style>
-    #galleryContainer::-webkit-scrollbar { display: none; }
-    #galleryContainer { -ms-overflow-style: none; scrollbar-width: none; }
-    #galleryContainer > div:hover { transform: translateY(-12px); }
-  </style>
-</section>
-  <!-- ==================== PROGRAMME ==================== -->
+  <!-- ==================== PROGRAMME + MOODBOARD + FLASH MOB + CADEAUX ==================== -->
   <section id="programme">
-    <h2>Programme du grand jour (Big day plan) </h2>
+    <h2>Programme du grand jour (Big day plan)</h2>
     <p>Du premier regard jusqu'à la dernière danse, chaque instant est pensé pour être inoubliable.</p>
     <div class="programme-item"><strong>12h00 à 14h00</strong> : Cérémonie traditionnelle</div>
     <div class="programme-item"><strong>16h00 à 17h00</strong> : Cérémonie civile</div>
     <div class="programme-item"><strong>17h00 à 18h30</strong> : Vin d'honneur</div>
     <div class="programme-item"><strong>19h00 à 23h00</strong> : Soirée</div>
+  </section>
 
-    <!-- ==================== MOODBOARD – AVEC 4 PHOTOS DÉFILANTES ==================== -->
-<section style="padding: 100px 20px; background: #fdfaf7; text-align: center;">
-  <h2 style="font-size: 3em; margin-bottom: 50px; color: #8b5a2b; font-family: 'Dancing Script', cursive;">
-    Moodboard
-  </h2>
-
-  <!-- TEXTE D'INTRODUCTION -->
- <p><strong>Dress code :</strong></p>
-
-<p style="max-width: 800px; margin: 0 auto 30px; font-size: 1.2em; line-height: 1.8; color: #6d4c41; font-family: 'Montserrat', sans-serif; font-weight: 300;">
-  <strong>Élégance automnale</strong> – Rien de tel que le thème classique des feuilles d’automne pour recréer l’atmosphère cozy, romantique et réconfortante propre à cette saison et que nous aimerions retrouver à notre mariage.
-</p>
-
-<p style="max-width: 800px; margin: 0 auto 60px; font-size: 1.2em; line-height: 1.8; color: #6d4c41; font-family: 'Montserrat', sans-serif; font-weight: 300;">
-  <strong>Cérémonie traditionnelle. Civile. Réception</strong> – Pensez à des teintes chaudes comme l’orange, le rouge, le marron et le jaune doré. Laissez libre cours à votre créativité… tout en restant dans l’élégance !
-</p>
-
-  <!-- GALLERY – 4 PHOTOS 320×480, SCROLL HORIZONTAL -->
-  <div id="moodboardGallery" 
-       style="display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 20px; 
-              padding: 20px 0; scrollbar-width: none; -ms-overflow-style: none; 
-              justify-content: flex-start;">
-    
-    <!-- PHOTO 1 -->
-    <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; 
-                box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
-      <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/76dd887f7b2bd826bdb85599de5b10a07f22ff71/Moodboard_1.jpg" 
-           alt="Moodboard 1" 
-           style="width: 100%; height: 100%; object-fit: contain; display: block;">
+  <!-- MOODBOARD -->
+  <section style="padding: 100px 20px; background: #fdfaf7; text-align: center;">
+    <h2>Moodboard</h2>
+    <p><strong>Dress code :</strong></p>
+    <p style="max-width: 800px; margin: 0 auto 30px; font-size: 1.2em;">
+      <strong>Élégance automnale</strong> – Rien de tel que le thème classique des feuilles d’automne pour recréer l’atmosphère cozy, romantique et réconfortante propre à cette saison et que nous aimerions retrouver à notre mariage.
+    </p>
+    <p style="max-width: 800px; margin: 0 auto 60px; font-size: 1.2em;">
+      <strong>Cérémonie traditionnelle. Civile. Réception</strong> – Pensez à des teintes chaudes comme l’orange, le rouge, le marron et le jaune doré. Laissez libre cours à votre créativité… tout en restant dans l’élégance !
+    </p>
+    <div id="moodboardGallery" style="display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 20px; padding: 20px 0; scrollbar-width: none; -ms-overflow-style: none; justify-content: flex-start;">
+      <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s; background: #f5f0eb; display: flex; align-items: center; justify-content: center;">
+        <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/76dd887f7b2bd826bdb85599de5b10a07f22ff71/Moodboard_1.jpg" alt="Moodboard 1" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+      </div>
+      <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
+        <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/76dd887f7b2bd826bdb85599de5b10a07f22ff71/Moodboard_2.jpg" alt="Moodboard 2" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
+        <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/76dd887f7b2bd826bdb85599de5b10a07f22ff71/Moodboard_3.jpg" alt="Moodboard 3" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
+        <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/76dd887f7b2bd826bdb85599de5b10a07f22ff71/Moodboard_4.jpg" alt="Moodboard 4" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
     </div>
+    <style>
+      #moodboardGallery::-webkit-scrollbar { display: none; }
+      #moodboardGallery { -ms-overflow-style: none; scrollbar-width: none; }
+      #moodboardGallery > div:hover { transform: translateY(-12px); }
+    </style>
+  </section>
 
-    <!-- PHOTO 2 -->
-    <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; 
-                box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
-      <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/76dd887f7b2bd826bdb85599de5b10a07f22ff71/Moodboard_2.jpg" 
-           alt="Moodboard 2" 
-           style="width: 100%; height: 100%; object-fit: cover; display: block;">
-    </div>
-
-    <!-- PHOTO 3 -->
-    <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; 
-                box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
-      <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/76dd887f7b2bd826bdb85599de5b10a07f22ff71/Moodboard_3.jpg" 
-           alt="Moodboard 3" 
-           style="width: 100%; height: 100%; object-fit: cover; display: block;">
-    </div>
-
-    <!-- PHOTO 4 -->
-    <div style="flex: 0 0 320px; height: 480px; border-radius: 22px; overflow: hidden; 
-                box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s;">
-      <img src="https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/76dd887f7b2bd826bdb85599de5b10a07f22ff71/Moodboard_4.jpg" 
-           alt="Moodboard 4" 
-           style="width: 100%; height: 100%; object-fit: cover; display: block;">
-    </div>
-
-  </div>
-
-  <!-- CACHAGE SCROLLBAR + EFFET HOVER -->
-  <style>
-    #moodboardGallery::-webkit-scrollbar { display: none; }
-    #moodboardGallery { -ms-overflow-style: none; scrollbar-width: none; }
-    #moodboardGallery > div:hover { transform: translateY(-12px); }
-  </style>
-</section>
-
-    <!-- ==================== FLASH MOB – AVEC TA VIDÉO YOUTUBE ==================== -->
-<section style="padding: 100px 20px; background: #fdfaf7; text-align: center;">
-  
-  <!-- TITRE -->
-  <h2 style="font-size: 3em; margin-bottom: 50px; color: #8b5a2b; font-family: 'Dancing Script', cursive;">
-    Flash Mob
-  </h2>
-
-  <!-- TEXTE INTRODUCTIF -->
-  <p style="max-width: 800px; margin: 0 auto 60px; font-size: 1.2em; line-height: 1.8; 
-            color: #6d4c41; font-family: 'Montserrat', sans-serif; font-weight: 300;">
-    Connaissez-vous le challenge <strong>Kedjevara - ça fait mal</strong> ? 
-    Il se pourrait qu'on fasse un Flashmob dessus lors des festivités. 
-    <strong>Seras-tu de la partie ?</strong> 
-    Regarde la vidéo en dessous pour te préparer
-  </p>
-
-  <!-- VIDÉO YOUTUBE RESPONSIVE (SHORTS) -->
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; 
-              max-width: 800px; margin: 0 auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
-    <iframe 
-      src="https://www.youtube.com/embed/vcFHCU-7ke0" 
-      title="Kedjevara - Ça fait mal (préparation Flash Mob)" 
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 20px;">
-    </iframe>
-  </div>
-
-</section>
- <!-- ==================== CADEAUX – SANS FOND BLANC, POLICE RÉDUITE D’1/3 ==================== -->
-<section style="text-align: center; background: #fdfaf7; padding-top: 100px;">
-  
-  <!-- TITRE "CADEAUX" AVANT L'IMAGE – STYLE COUNTDOWN -->
-  <h2 style="font-size: 3em; margin-bottom: 50px; color: #8b5a2b; 
-             font-family: 'Dancing Script', cursive;">
-    Cadeaux
-  </h2>
-
-  <!-- SECTION AVEC IMAGE EN FOND – IDENTIQUE À COUNTDOWN -->
-  <div style="position: relative; padding: 120px 20px; background: #fdfaf7; overflow: hidden;">
-    
-    <!-- IMAGE EN FOND – COVER, EFFACÉE -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; 
-                background: url('https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/27cef79028426db56f07613fa238cbf5a7cf1187/Cadeau_2.jpg') 
-                            center/cover no-repeat; 
-                filter: brightness(0.7) opacity(0.5);">
-    </div>
-
-    <!-- CONTENU CENTRÉ – TEXTE NOIR, POLICE RÉDUITE, LISIBILITÉ MAX -->
-    <div style="position: relative; z-index: 2; max-width: 900px; margin: 0 auto; padding: 0 15px;">
-      
-      <p style="font-size: 0.93em; line-height: 2; color: #000; 
-                text-shadow: 1px 1px 4px rgba(255,255,255,0.95); 
-                font-weight: 400; font-family: 'Montserrat', sans-serif; 
-                max-width: 750px; margin: 0 auto;">
-        Votre présence et vos prières seront déjà pour nous le plus beau des cadeaux.<br><br>
-        Ne résidant pas sur place, il nous sera difficile d’emporter des cadeaux physiques. 
-        Ceux qui souhaiteraient nous témoigner leur affection par un présent pourront le faire 
-        sous forme de geste symbolique via <strong>Orange Money</strong> ou <strong>Mobile Money</strong> 
-        aux numéros qui seront communiqués.<br><br>
-        <em style="color: #6d4c41; font-size: 1.1em;">
-          Nous vous remercions sincèrement pour votre attention et votre bienveillance.
-        </em>
-      </p>
-    </div>
-  </div>
-</section>
+  <!-- FLASH MOB -->
+  <section style="padding: 100px 20px; background: #fdfaf7; text-align: center;">
+    <h2>Flash Mob</h2>
+    <p style="max-width: 800px; margin: 0 auto 60px; font-size: 1.2em;">
+      Connaissez-vous le challenge <strong>Kedjevara - ça fait mal</strong> ?
+      Il se pourrait qu'on fasse un Flashmob dessus lors des festivités.
+      <strong>Seras-tu de la partie ?</strong>
+      Regarde la vidéo en dessous pour te préparer
+    </p>
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 800px; margin: 0 auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+      <iframe src="https://www.youtube.com/embed/vcFHCU-7ke0" title="Kedjevara - Ça fait mal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 20px;"></iframe>
     </div>
   </section>
-  <!-- ==================== LIEU ==================== -->
+
+  <!-- CADEAUX -->
+  <section style="text-align: center; background: #fdfaf7; padding-top: 100px;">
+    <h2>Cadeaux</h2>
+    <div style="position: relative; padding: 120px 20px; background: #fdfaf7; overflow: hidden;">
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+                  background: url('https://raw.githubusercontent.com/rudynleme-cpu/patricia-et-rudy-mariage/27cef79028426db56f07613fa238cbf5a7cf1187/Cadeau_2.jpg') center/cover no-repeat;
+                  filter: brightness(0.7) opacity(0.5);">
+      </div>
+      <div style="position: relative; z-index: 2; max-width: 900px; margin: 0 auto; padding: 0 15px;">
+        <p style="font-size: 0.93em; line-height: 2; color: #000; text-shadow: 1px 1px 4px rgba(255,255,255,0.95); max-width: 750px; margin: 0 auto;">
+          Votre présence et vos prières seront déjà pour nous le plus beau des cadeaux.<br><br>
+          Ne résidant pas sur place, il nous sera difficile d’emporter des cadeaux physiques.
+          Ceux qui souhaiteraient nous témoigner leur affection par un présent pourront le faire
+          sous forme de geste symbolique via <strong>Orange Money</strong> ou <strong>Mobile Money</strong>
+          aux numéros qui seront communiqués.<br><br>
+          <em style="color: #6d4c41; font-size: 1.1em;">
+            Nous vous remercions sincèrement pour votre attention et votre bienveillance.
+          </em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIEU + CONTACTS + FOOTER -->
   <section>
     <h2>Un lieu d'exception à Yaoundé</h2>
     <p>Nous avons choisi un cadre chaleureux et convivial pour accueillir cette journée pleine de joie.</p>
     <p style="margin: 20px 0;"><strong>Les Jardins de Jeanne et César, Collège Jean Jaurès, Simbock, Yaoundé</strong></p>
   </section>
-  <!-- ==================== CONTACTS ==================== -->
+
   <section>
-    <h2>Si vous avez des questions sur l’organisation, l’accès au lieu,
-Ou tout autre détail, n’hésitez pas à nous contacter à l’adresse email ci dessous</h2>
+    <h2>Si vous avez des questions sur l’organisation, l’accès au lieu, ou tout autre détail, n’hésitez pas à nous contacter à l’adresse email ci-dessous</h2>
     <p>Nous nous ferons un plaisir de vous aider !</p>
     <div class="contact"><p><strong>Votre Wedding Planner</strong><br>onceuponthenlems@gmail.com</p></div>
   </section>
 
-  <!-- ==================== FOOTER ==================== -->
   <footer>
     <p>Patricia & Rudy – 10 janvier 2026</p>
     <p>webdesign : <a href="mailto:rudynleme@gmail.com">Rudy_Nleme</a></p>
   </footer>
 
-  <!-- ==================== COUNTDOWN SCRIPT ==================== -->
+  <!-- COUNTDOWN SCRIPT -->
   <script>
     const weddingDate = new Date(2026, 0, 10);
     function updateCountdown() {
