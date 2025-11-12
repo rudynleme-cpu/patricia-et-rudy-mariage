@@ -11,13 +11,20 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
-    /* TEXTE GLOBAL : BELLEZA + 33% PLUS GRAND */
+    /* TEXTE GLOBAL : BELLEZA + 1.3em */
     body, p, li, span, div, a, em, strong, .contact, .programme-item {
       font-family: 'Belleza', sans-serif !important;
       font-weight: 400;
       color: #6d4c41;
       line-height: 1.8;
-      font-size: 1.6em !important; /* +1/3 */
+      font-size: 1.3em !important;
+    }
+
+    /* COMPTE À REBOURS SECTION : 1.2em */
+    #countdown, #countdown .time-unit {
+      font-size: 1.2em !important;
+      color: white !important;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
     }
 
     /* TITRES : DANCING SCRIPT + 25% PLUS GRANDS */
@@ -41,10 +48,10 @@
     }
     .hero__video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; object-fit: cover; }
 
-    /* COMPTE À REBOURS HERO : ANCIENNE POLICE + PLUS GRAND */
+    /* COMPTE À REBOURS HERO : DANCING SCRIPT + 9.3rem */
     #heroCountdown h1 {
       font-family: 'Dancing Script', cursive !important;
-      font-size: 9.3rem !important; /* +1/3 de 7rem */
+      font-size: 9.3rem !important;
       text-shadow: 3px 3px 12px rgba(0,0,0,0.9);
     }
 
@@ -53,16 +60,10 @@
     .programme-item strong { color: #8b5a2b; }
     footer { text-align: center; padding: 40px; font-size: 0.9em; color: #999; }
 
-    /* COUNTDOWN SECTION : TOUT EN BLANC */
-    #countdown, #countdown .time-unit {
-      color: white !important;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
-      font-size: 2.8em !important;
-    }
-
     @media (max-width: 768px) {
       h2 { font-size: 2.8em !important; }
-      p, .programme-item { font-size: 1.4em !important; }
+      p, .programme-item { font-size: 1.2em !important; }
+      #countdown, #countdown .time-unit { font-size: 1.1em !important; }
       #heroCountdown h1 { font-size: 6rem !important; }
       section { padding: 60px 15px; }
     }
